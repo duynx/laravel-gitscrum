@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteRule ^(.*)$ public/$1 [L]
+#   RewriteRule ^(.*)$ https://scrum.imcoder.net/puclic/$1 [R,L]
+   RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+   RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+   RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+</IfModule>
